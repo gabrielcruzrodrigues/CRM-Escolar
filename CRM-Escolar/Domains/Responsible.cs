@@ -1,5 +1,6 @@
 ﻿using CRM_Escolar.Domains.Enums;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
 namespace CRM_Escolar.Domains
@@ -36,7 +37,7 @@ namespace CRM_Escolar.Domains
 
         public DateTime LastUpdatedAt { get; set; }
 
-        [JsonIgnore]
-        public Student? Student { get; set; }
+        [NotMapped]
+        public IEnumerable<Student>? Student { get; set; }
     }
 }
