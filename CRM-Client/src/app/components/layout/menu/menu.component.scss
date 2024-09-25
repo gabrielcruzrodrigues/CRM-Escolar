@@ -19,10 +19,13 @@ nav {
      height: 100%;
 }
 
+.logo-div {
+     display: flex;
+     justify-content: center;
+}
+
 .logo {
-     width: 100px;
-     margin-bottom: 20px;
-     border-bottom: 1px solid white;
+     width: 60%;
 }
 
 nav ul {
@@ -51,6 +54,18 @@ nav ul li {
      align-items: baseline;
      transition: 0.7s;
 }
+
+nav ul li a {
+     text-align: center;
+     font-size: 18px;
+     width: 100%;
+     display: flex;
+     align-items: baseline;
+     transition: 0.7s;
+     text-decoration: none;
+     color: white;
+}
+
 
 nav ul li:hover {
      background-color: rgba(255, 255, 255, 0.185);
