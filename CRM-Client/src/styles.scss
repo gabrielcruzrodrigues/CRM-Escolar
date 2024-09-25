@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap";
+
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: Roboto, sans-serif;
+}
+
+body {
+     background-color: #eeeeee;
+}
+
+.main-section {
+     position: fixed;
+     right: 0;
+     top: 0;
+     width: 85%;
+     height: 100vh;
+     padding: 2%;
+}
