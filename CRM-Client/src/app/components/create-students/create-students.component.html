@@ -1,0 +1,44 @@
+<app-menu></app-menu>
+<section class="main-section">
+     <app-infos-back [link]="link"></app-infos-back>
+     <section class="form-section">
+          <div class="title">
+               <img src="/assets/add-icon.png">
+               <h1>Cadastrar usuário</h1>
+          </div>
+          <form action="">
+               <div class="image-profile">
+                    <input type="file">
+               </div>
+
+               <div class="fields">
+                    <div class="column1">
+                         <label>Nome:</label>
+                         <input type="text" name="name" placeholder="Digite aqui o nome do aluno">
+                         <label>CPF:</label>
+                         <input type="text" name="cpf" placeholder="Digite aqui o cpf do aluno">
+                         <label>Data de aniversário:</label>
+                         <input type="date" name="date-of-birth" placeholder="Digite aqui a data de aniversário">
+                         <label>Endereço:</label>
+                         <input type="type" name="address" placeholder="Digite aqui o endereço do aluno">
+                    </div>
+                    <div class="column2">
+                         <label>Serie:</label>
+                         <input type="text" name="serie" placeholder="Escolha a série do aluno">
+                         <label>Dia de pagamento:</label>
+                         <input type="number" name="payment-day" placeholder="Digite aqui o dia de pagamento do aluno">
+                         <label>Telefone de emergência:</label>
+                         <input type="number" name="emergence-phone" placeholder="Digite aqui o telefone de emergência do usuário">
+                         <label>Alergias:</label>
+                         <input name="allergies" placeholder="Digite aqui as alergias do usuário">
+                    </div>
+               </div>
+
+               <button type="submit" class="submit-button">
+                    <p>Avançar</p>
+                    <img src="/assets/next-icon.png">
+               </button>
+          </form>
+     </section>
+
+</section>

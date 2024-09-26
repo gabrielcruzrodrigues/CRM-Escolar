@@ -1,0 +1,49 @@
+.infos {
+     display: flex;
+     justify-content: space-between;
+     padding: 0 5px 10px 0px;
+}
+
+.label-div {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     cursor: pointer;
+     text-decoration: none;
+     color: black;
+}
+
+.back {
+     border: none;
+     font-size: 20px;
+     align-items: center;
+     cursor: pointer;
+}
+
+.label-div img {
+     width: 50px;
+}
+
+.profile-infos {
+     display: flex;
+     align-items: center;
+     width: 27%;
+     justify-content: space-around;
+}
+
+.profile {
+     width: 40px;
+     height: 40px;
+     cursor: pointer;
+}
+
+.notifications {
+     border-radius: 40px;
+     border: 1px solid #ccc;
+     cursor: pointer;
+}
+
+.notifications img {
+     width: 40px;
+     height: 40px;
+}

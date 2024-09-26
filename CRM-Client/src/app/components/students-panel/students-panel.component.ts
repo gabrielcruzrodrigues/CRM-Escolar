@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MenuComponent } from '../layout/menu/menu.component';
 import { InfosComponent } from '../layout/infos/infos.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-students-panel',
@@ -11,4 +12,10 @@ import { InfosComponent } from '../layout/infos/infos.component';
 })
 export class StudentsPanelComponent {
 
+  constructor(private router: Router) 
+  { }
+
+  redirectToCreate() : void {
+    this.router.navigate(["/create-student"]);
+  }
 }
