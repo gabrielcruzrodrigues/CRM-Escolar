@@ -13,7 +13,7 @@
      align-items: center;
      justify-content: center;
      font-size: 22px;
-     padding: 2%;
+     padding: 2% 0 0 0;
 }
 
 .title img {
@@ -21,13 +21,23 @@
      width: 40px;
 }
 
-form {
+.windown {
+     width: 100%;
+     height: 100%;
+     margin: 0 auto;
+
      display: flex;
      justify-content: center;
      flex-direction: column;
      align-items: center;
-     margin-top: 20px;
-     width: 100%;
+     margin-top: 10px;
+     margin-bottom: 20px;
+}
+
+// Primeira tela
+
+.first {
+     display: none;
 }
 
 .image-profile {
@@ -37,9 +47,16 @@ form {
      border: 1px solid #ccc;
      display: flex;
      cursor: pointer;
+     box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.1);
 }
 
-.fields {
+.image-profile input {
+     opacity: 0;
+     width: 100%;
+     cursor: pointer;
+}
+
+.fields-windown1 {
     display: grid;
     gap: 3%;
     grid-template-columns: 1fr 1fr; 
@@ -47,18 +64,19 @@ form {
     margin-top: 20px;
 }
 
-.fields input {
+.fields-windown1 input, .fields-windown2 input {
      padding: 10px;
      border: 1px solid #ccc;
      border-radius: 8px;
      margin-bottom: 5%;
+     box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.1);
 } 
 
 .fields label {
      margin-bottom: 3px;
 }
 
-.column1, .column2 {
+.column {
      display: flex;
      justify-content: center;
      flex-direction: column;
@@ -70,14 +88,43 @@ form {
      font-size: 20px;
      width: 30%;
      justify-content: center;
-     margin: 10px 0 20px 0;
+     margin: 10px auto 20px auto;
      border: 1px solid #ccc;
      background-color: $primary-color;
      border-radius: 20px;
      color: white;
      cursor: pointer;
+     box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.1);
 }
 
 .submit-button p {
      margin-right: 2%;
+}
+
+// segunda tela
+
+.fields-windown2 { 
+     display: block;
+     width: 80%;
+     margin-top: 30px;
+}
+
+.fields-windown2 input {
+     width: 60%;
+     margin: 0 auto;
+     margin-bottom: 2%;
+}
+
+select {
+     width: 60%;
+     margin: 0 auto 2% auto;
+     padding: 10px;
+     border: 1px solid #ccc;
+     border-radius: 8px;
+     box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.1);
+}
+
+.fields-windown2 label {
+     width: 60%;
+     margin: 0 auto;
 }

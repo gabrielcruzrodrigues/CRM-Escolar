@@ -12,4 +12,5 @@ import { InfosBackComponent } from '../layout/infos-back/infos-back.component';
 export class CreateStudentsComponent {
 
   link: string = '/students-panel';
+  title: string = "Cadastrar responsável";
 }
