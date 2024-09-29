@@ -82,7 +82,7 @@
      flex-direction: column;
 }
 
-.submit-button {
+.next-button-1 {
      display: flex;
      align-items: center;
      font-size: 20px;
@@ -97,11 +97,15 @@
      box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.1);
 }
 
-.submit-button p {
+.next-button-1 p {
      margin-right: 2%;
 }
 
 // segunda tela
+
+.second {
+     // display: none;
+}
 
 .fields-windown2 { 
      display: block;
@@ -127,4 +131,35 @@ select {
 .fields-windown2 label {
      width: 60%;
      margin: 0 auto;
+}
+
+.buttons {
+     margin: 2% auto;
+     display: flex;
+     width: 60%;
+     justify-content: space-between;
+}
+
+.next-button-2 {
+     display: flex;
+     align-items: center;
+     font-size: 20px;
+     width: 48%;
+     justify-content: center;
+     // margin: 10px auto 20px auto;
+     border: 1px solid #ccc;
+     background-color: $primary-color;
+     border-radius: 20px;
+     color: white;
+     cursor: pointer;
+     box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.1);
+}
+
+.next-button-2 p {
+     margin-right: 2%;
+}
+
+.back-button-2 {
+     background-color: rgba(255, 255, 0, 0.826);
+     color: black;
 }

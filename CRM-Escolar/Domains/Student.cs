@@ -1,5 +1,6 @@
 ﻿using CRM_Escolar.Domains.Enums;
 using System.ComponentModel.DataAnnotations;
+using System.Security.Cryptography;
 
 namespace CRM_Escolar.Domains
 {
@@ -41,7 +42,7 @@ namespace CRM_Escolar.Domains
         public double RegisterValue { get; set; }
 
         [Required]
-        public DateTime RegisterDate { get; set; }
+        public DateOnly RegisterDate { get; set; }
 
         [Required]
         public DateOnly PaymentDay { get; set; }
@@ -50,5 +51,24 @@ namespace CRM_Escolar.Domains
         public DateTime CreatedAt { get; set; }
 
         public DateTime LastUpdatedAt { get; set; }
+
+        public Student(string name, string imageProfile, string cpf, string emergencePhone,
+               DateOnly dateOfBirth, string address, SerieEnum serie, double registerValue,
+               DateOnly registerDate, DateOnly paymentDay)
+        {
+            Name = name;
+            ImageProfile = imageProfile;
+            Cpf = cpf;
+            EmergencePhone = emergencePhone;
+            DateOfBirth = dateOfBirth;
+            Address = address;
+            Serie = serie;
+            RegisterValue = registerValue;
+            RegisterDate = registerDate;
+            PaymentDay = paymentDay;
+            CreatedAt = DateTime.UtcNow;
+            LastUpdatedAt = DateTime.UtcNow;
+        }
+
     }
 }
