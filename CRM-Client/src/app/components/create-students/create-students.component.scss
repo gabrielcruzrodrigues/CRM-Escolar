@@ -64,7 +64,7 @@
     margin-top: 20px;
 }
 
-.fields-windown1 input, .fields-windown2 input {
+.fields-windown1 input, .fields-windown2 input, .fields-windown3 input {
      padding: 10px;
      border: 1px solid #ccc;
      border-radius: 8px;
@@ -103,13 +103,17 @@
 
 // segunda tela
 
+.second {
+     display: none;
+}
+
 .fields-windown2 { 
-     display: block;
+     // display: block;
      width: 80%;
      margin-top: 30px;
 }
 
-.fields-windown2 input {
+.fields-windown2 input, .fields-windown3 input {
      width: 60%;
      margin: 0 auto;
      margin-bottom: 2%;
@@ -124,7 +128,14 @@ select {
      box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.1);
 }
 
-.fields-windown2 label {
+.fields-windown2 label, .fields-windown3 label {
      width: 60%;
      margin: 0 auto;
+}
+
+// Terceira tela
+.fields-windown3 { 
+     display: block;
+     width: 80%;
+     margin-top: 30px;
 }
