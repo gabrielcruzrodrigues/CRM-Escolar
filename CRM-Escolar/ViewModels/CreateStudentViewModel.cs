@@ -8,30 +8,46 @@ namespace CRM_Escolar.ViewModels;
 
 public class CreateStudentViewModel
 {
-    public string? Name { get; set; }
-    public string? ImageProfile { get; set; }
-    public string? Cpf { get; set; }
-    public string? EmergencePhone { get; set; }
-    public string? DateOfBirth { get; set; }
-    public string? Address { get; set; }
-    public SerieEnum Serie { get; set; }
-    public double RegisterValue { get; set; }
-    public DateOnly PaymentDay { get; set; }
+    [Required(ErrorMessage = "O nome é obrigatório")]
+    public required string Name { get; set; }
+
+    public IFormFile? ImageProfile { get; set; }
+
+    [Required(ErrorMessage = "O CPF é obrigatório")]
+    public required string Cpf { get; set; }
+
+    [Required(ErrorMessage = "O telefone de emergência é obrigatório")]
+    public required string EmergencePhone { get; set; }
+
+    [Required(ErrorMessage = "A data de nascimento é obrigatória")]
+    public required string DateOfBirth { get; set; }
+
+    [Required(ErrorMessage = "O endereço é obrigatório")]
+    public required string Address { get; set; }
+
+    [Required(ErrorMessage = "A série é obrigatória")]
+    public required SerieEnum Serie { get; set; }
+
+    [Required(ErrorMessage = "O valor de matrícula é obrigatório")]
+    public required double RegisterValue { get; set; }
+
+    [Required(ErrorMessage = "O dia do pagamento é obrigatório")]
+    public required string PaymentDay { get; set; }
 
     public Student CreateStudent()
     {
-        if (DateOfBirth is null)
+        if (string.IsNullOrEmpty(PaymentDay) || string.IsNullOrEmpty(DateOfBirth))
         {
-            throw new InvalidOperationException("A Data de aniversário é obrigatória!");
+            throw new InvalidOperationException("A Data de aniversário e a data de nascimento são obrigatórias!");
         }
 
         //data for date of birth
         string format = "yyyy/MM/dd";
-        DateTime myDate;
+        DateTime DateOfBirthDate;
 
-        if (!DateTime.TryParseExact(DateOfBirth, format, CultureInfo.InvariantCulture, DateTimeStyles.None, out myDate))
+        if (!DateTime.TryParseExact(DateOfBirth, format, CultureInfo.InvariantCulture, DateTimeStyles.None, out DateOfBirthDate))
         {
-            throw new HttpResponseException(400, "A data não é válida!");
+            throw new HttpResponseException(400, "A Data de nascimento não esta em um formato válido!");
         }
 
         //data for register date
@@ -40,14 +56,14 @@ public class CreateStudentViewModel
         return new Student
         (
             Name,
-            ImageProfile,
+            "without image",
             Cpf,
             EmergencePhone,
-            new DateOnly(myDate.Year, myDate.Month, myDate.Day),
+            new DateTime(DateOfBirthDate.Year, DateOfBirthDate.Month, DateOfBirthDate.Day),
             Address,
             Serie,
             RegisterValue,
-            new DateOnly(registerDate.Year, registerDate.Month, registerDate.Day),
+            new DateTime(registerDate.Year, registerDate.Month, registerDate.Day),
             PaymentDay
         );
     }

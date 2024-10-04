@@ -37,7 +37,6 @@ namespace CRM_Escolar.Domains
 
         public DateTime LastUpdatedAt { get; set; }
 
-        [NotMapped]
-        public IEnumerable<Student>? Student { get; set; }
+        public ICollection<Student> Students { get; set; }
     }
 }

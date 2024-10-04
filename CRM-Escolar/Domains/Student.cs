@@ -1,6 +1,5 @@
 ﻿using CRM_Escolar.Domains.Enums;
 using System.ComponentModel.DataAnnotations;
-using System.Security.Cryptography;
 
 namespace CRM_Escolar.Domains
 {
@@ -11,26 +10,28 @@ namespace CRM_Escolar.Domains
 
         [Required]
         [StringLength(80)]
-        public string? Name { get; set; }
+        public string Name { get; set; }
 
         public string? ImageProfile { get; set; }
-        public string? Cpf { get; set; }
-        public Responsible? Mother { get; set; }
-        public Responsible? Father { get; set; }
+
+        [Required]
+        [StringLength(11)]
+        public string Cpf { get; set; }
 
         [Required]
         [StringLength(13)]
-        public string? EmergencePhone { get; set; }
+        public string EmergencePhone { get; set; }
+
+        private DateTime _dateOfBirth;
+        [Required]
+        public DateTime DateOfBirth
+        {
+            get => _dateOfBirth;
+            set => _dateOfBirth = DateTime.SpecifyKind(value, DateTimeKind.Utc);
+        }
 
         [Required]
-        public DateOnly? DateOfBirth { get; set; }
-
-        [Required]
-        public string? Address { get; set; }
-
-        public IEnumerable<string>? Allergies { get; set; }
-        public IEnumerable<Medication>? Medications { get; set; }
-        public IEnumerable<Illness>? Illnesses { get; set; }
+        public string Address { get; set; }
 
         [Required]
         public School? School { get; set; }
@@ -41,34 +42,59 @@ namespace CRM_Escolar.Domains
         [Required]
         public double RegisterValue { get; set; }
 
+        private DateTime _registerDate;
         [Required]
-        public DateOnly RegisterDate { get; set; }
+        public DateTime RegisterDate
+        {
+            get => _registerDate;
+            set => _registerDate = DateTime.SpecifyKind(value, DateTimeKind.Utc);
+        }
 
         [Required]
-        public DateOnly PaymentDay { get; set; }
+        public string PaymentDay { get; set; }
 
+        private DateTime _createdAt;
         [Required]
-        public DateTime CreatedAt { get; set; }
+        public DateTime CreatedAt
+        {
+            get => _createdAt;
+            set => _createdAt = DateTime.SpecifyKind(value, DateTimeKind.Utc);
+        }
 
-        public DateTime LastUpdatedAt { get; set; }
+        private DateTime _lastUpdatedAt;
+        public DateTime LastUpdatedAt
+        {
+            get => _lastUpdatedAt;
+            set => _lastUpdatedAt = DateTime.SpecifyKind(value, DateTimeKind.Utc);
+        }
+
+        public ICollection<string>? Allergies { get; set; }
+        public ICollection<Medication>? Medications { get; set; }
+        public ICollection<Illness>? Illnesses { get; set; }
+        public ICollection<Responsible> Responsibles { get; set; }
+
+        public Student()
+        {
+            CreatedAt = DateTime.UtcNow;
+            LastUpdatedAt = DateTime.UtcNow;
+        }
 
         public Student(string name, string imageProfile, string cpf, string emergencePhone,
-               DateOnly dateOfBirth, string address, SerieEnum serie, double registerValue,
-               DateOnly registerDate, DateOnly paymentDay)
+               DateTime dateOfBirth, string address, SerieEnum serie, double registerValue,
+               DateTime registerDate, string paymentDay)
         {
             Name = name;
             ImageProfile = imageProfile;
             Cpf = cpf;
             EmergencePhone = emergencePhone;
-            DateOfBirth = dateOfBirth;
+            DateOfBirth = DateTime.SpecifyKind(dateOfBirth, DateTimeKind.Utc);
             Address = address;
             Serie = serie;
             RegisterValue = registerValue;
-            RegisterDate = registerDate;
+            RegisterDate = DateTime.SpecifyKind(registerDate, DateTimeKind.Utc);
             PaymentDay = paymentDay;
             CreatedAt = DateTime.UtcNow;
             LastUpdatedAt = DateTime.UtcNow;
         }
-
     }
 }

@@ -25,7 +25,7 @@ namespace CRM_Escolar.Controllers
             }
 
             Student student = studentViewModel.CreateStudent();
-            var userCreated = _repository.CreateAsync(student);
+            var userCreated = await _repository.CreateAsync(student);
 
             return new CreatedAtRouteResult("GetStudent", new { id = userCreated.Id }, userCreated);
         }
