@@ -11,13 +11,8 @@ public class School
     [StringLength(80)]
     [MinLength(3)]
     public string? Name { get; set; }
-
     public string? Phone { get; set; }
-
-    [Required]
-    [StringLength(20)]
-    [MinLength(3)]
-    public string? City { get; set; }
+    public string? Address { get; set; }
 
     [Required]
     public DateTime CreatedAt { get; set; }
