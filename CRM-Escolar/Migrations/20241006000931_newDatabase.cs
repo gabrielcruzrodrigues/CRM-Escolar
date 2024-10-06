@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CRM_Escolar.Migrations
 {
     /// <inheritdoc />
-    public partial class databaseV1 : Migration
+    public partial class newDatabase : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -40,7 +40,7 @@ namespace CRM_Escolar.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Name = table.Column<string>(type: "character varying(80)", maxLength: 80, nullable: false),
                     Phone = table.Column<string>(type: "text", nullable: true),
-                    City = table.Column<string>(type: "character varying(20)", maxLength: 20, nullable: false),
+                    Address = table.Column<string>(type: "text", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     LastUpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
@@ -57,7 +57,7 @@ namespace CRM_Escolar.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Name = table.Column<string>(type: "character varying(80)", maxLength: 80, nullable: false),
                     ImageProfile = table.Column<string>(type: "text", nullable: true),
-                    Cpf = table.Column<string>(type: "text", nullable: false),
+                    Cpf = table.Column<string>(type: "character varying(11)", maxLength: 11, nullable: false),
                     EmergencePhone = table.Column<string>(type: "character varying(13)", maxLength: 13, nullable: false),
                     DateOfBirth = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     Address = table.Column<string>(type: "text", nullable: false),

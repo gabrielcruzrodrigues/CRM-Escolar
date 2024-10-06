@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CRM_Escolar.Migrations
 {
     [DbContext(typeof(MyAppContext))]
-    [Migration("20241004010637_databaseV1")]
-    partial class databaseV1
+    [Migration("20241006000931_newDatabase")]
+    partial class newDatabase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -141,10 +141,8 @@ namespace CRM_Escolar.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("City")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("character varying(20)");
+                    b.Property<string>("Address")
+                        .HasColumnType("text");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
@@ -182,7 +180,8 @@ namespace CRM_Escolar.Migrations
 
                     b.Property<string>("Cpf")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(11)
+                        .HasColumnType("character varying(11)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
