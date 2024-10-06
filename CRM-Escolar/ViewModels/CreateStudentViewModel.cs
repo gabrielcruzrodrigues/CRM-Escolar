@@ -25,6 +25,9 @@ public class CreateStudentViewModel
     [Required(ErrorMessage = "O endereço é obrigatório")]
     public required string Address { get; set; }
 
+    [Required(ErrorMessage = "A escola é obrigatória")]
+    public required int SchoolId { get; set; }
+
     [Required(ErrorMessage = "A série é obrigatória")]
     public required SerieEnum Serie { get; set; }
 
@@ -54,17 +57,18 @@ public class CreateStudentViewModel
         DateTime registerDate = DateTime.UtcNow;
 
         return new Student
-        (
-            Name,
-            "without image",
-            Cpf,
-            EmergencePhone,
-            new DateTime(DateOfBirthDate.Year, DateOfBirthDate.Month, DateOfBirthDate.Day),
-            Address,
-            Serie,
-            RegisterValue,
-            new DateTime(registerDate.Year, registerDate.Month, registerDate.Day),
-            PaymentDay
-        );
+        {
+            Name = Name,
+            ImageProfile = "without image",
+            Cpf = Cpf,
+            EmergencePhone = EmergencePhone,
+            DateOfBirth = new DateTime(DateOfBirthDate.Year, DateOfBirthDate.Month, DateOfBirthDate.Day),
+            Address = Address,
+            Serie = Serie,
+            RegisterValue = RegisterValue,
+            RegisterDate = new DateTime(registerDate.Year, registerDate.Month, registerDate.Day),
+            PaymentDay = PaymentDay,
+            SchoolId = SchoolId
+        };
     }
 }

@@ -34,7 +34,8 @@ namespace CRM_Escolar.Domains
         public string Address { get; set; }
 
         [Required]
-        public School? School { get; set; }
+        public int SchoolId { get; set; }
+        public School School { get; set; } //propriedade de navegação
 
         [Required]
         public SerieEnum Serie { get; set; }
@@ -68,7 +69,7 @@ namespace CRM_Escolar.Domains
             set => _lastUpdatedAt = DateTime.SpecifyKind(value, DateTimeKind.Utc);
         }
 
-        public ICollection<string>? Allergies { get; set; }
+        public List<string>? Allergies { get; set; }
         public ICollection<Medication>? Medications { get; set; }
         public ICollection<Illness>? Illnesses { get; set; }
         public ICollection<Responsible> Responsibles { get; set; }

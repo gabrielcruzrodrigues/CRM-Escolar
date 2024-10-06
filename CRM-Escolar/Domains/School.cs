@@ -19,5 +19,5 @@ public class School
 
     public DateTime LastUpdatedAt { get; set; }
 
-    public IEnumerable<Student>? Student { get; set; }
+    public ICollection<Student>? Student { get; set; }
 }

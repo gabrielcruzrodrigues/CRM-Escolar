@@ -31,9 +31,10 @@ namespace CRM_Escolar.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<Student>> GetAllStudentsAsync()
+        public async Task<ActionResult<IEnumerable<Student>>> GetAllStudentsAsync()
         {
-            return await _repository.GetAllAsync();
+            var response = await _repository.GetAllAsync();
+            return Ok(response);
         }
 
         [HttpGet("{id:int}", Name ="GetStudent")]

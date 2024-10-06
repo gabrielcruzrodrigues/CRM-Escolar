@@ -39,6 +39,7 @@ namespace CRM_Escolar.Repository
         public async Task<IEnumerable<Student>> GetAllAsync()
         {
             return await _context.Students
+                .Include(s => s.School)
                 .AsNoTracking()
                 .ToListAsync();
         }
