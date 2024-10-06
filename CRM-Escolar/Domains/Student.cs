@@ -35,7 +35,6 @@ namespace CRM_Escolar.Domains
 
         [Required]
         public int SchoolId { get; set; }
-        public School School { get; set; } //propriedade de navegação
 
         [Required]
         public SerieEnum Serie { get; set; }
@@ -73,6 +72,9 @@ namespace CRM_Escolar.Domains
         public ICollection<Medication>? Medications { get; set; }
         public ICollection<Illness>? Illnesses { get; set; }
         public ICollection<Responsible> Responsibles { get; set; }
+
+        //propriedades de navegação
+        public School School { get; set; }
 
         public Student()
         {

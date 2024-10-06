@@ -34,7 +34,7 @@
      margin-bottom: 20px;
 }
 
-// Primeira tela
+// Primeira tela - Estudante
 
 .first {
      display: none;
@@ -101,14 +101,10 @@
      margin-right: 2%;
 }
 
-// segunda tela
+// segunda tela - Responsavel
 
 .second {
-<<<<<<< HEAD
      display: none;
-=======
-     // display: none;
->>>>>>> 07d3bfbdd803fbfd5b7b27b4971db1ffaf0f566e
 }
 
 .fields-windown2 { 
@@ -137,13 +133,12 @@ select {
      margin: 0 auto;
 }
 
-<<<<<<< HEAD
-// Terceira tela
 .fields-windown3 { 
      display: block;
      width: 80%;
      margin-top: 30px;
-=======
+}
+
 .buttons {
      margin: 2% auto;
      display: flex;
@@ -173,5 +168,53 @@ select {
 .back-button-2 {
      background-color: rgba(255, 255, 0, 0.826);
      color: black;
->>>>>>> 07d3bfbdd803fbfd5b7b27b4971db1ffaf0f566e
+}
+
+// Terceira tela - Escola
+
+.third {
+     display: none;
+}
+
+// Quarta tela - Medicamentos
+
+.fourth {
+     // display: none;
+}
+
+.add-medication {
+     border: 1px solid #ccc;
+     width: 30%;
+     padding: 1%;
+     margin: 0 auto 20px auto;
+     border-radius: 10px;
+     cursor: pointer;
+}
+
+.add-medication .img {
+     display: flex;
+     justify-content: center;
+     margin-bottom: 10px;
+}
+
+.add-medication p{
+     font-size: 18px;
+     text-align: center;
+}
+
+.form-medication {
+     display: flex; //flex
+     flex-direction: column;
+}
+
+.schadules {
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr;
+     width: 60%;
+     margin: 0 auto 20px auto;
+}
+
+.schadule {
+     display: flex;
+     flex-direction: column;
 }

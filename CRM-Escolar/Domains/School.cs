@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace CRM_Escolar.Domains;
 
@@ -19,5 +20,6 @@ public class School
 
     public DateTime LastUpdatedAt { get; set; }
 
+    //propriedade de navegação
     public ICollection<Student>? Student { get; set; }
 }

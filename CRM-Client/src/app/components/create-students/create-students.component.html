@@ -10,7 +10,7 @@
 
           <form action="">
 
-               <!-- Primeira tela -->
+               <!-- Primeira tela - Estudante -->
                 <div class="windown first">
                     <div class="image-profile">
                          <input type="file">
@@ -45,7 +45,7 @@
                     </button>
                </div>
                
-               <!-- Segunda tela -->
+               <!-- Segunda tela - Responsável -->
                <div class="second fields-windown2 windown">
                     <div class="column">
                          <label>Nome:</label>
@@ -78,7 +78,7 @@
                     </div>
                </div>
 
-               <!-- Terceira tela -->
+               <!-- Terceira tela - Escola -->
                <div class="fields-windown3 windown third">
                     <div class="column">
                          <select>
@@ -92,10 +92,66 @@
                          <input type="text" name="cpf" placeholder="Digite aqui o cpf do responsável">
                     </div>
 
-                    <button type="submit" class="submit-button">
-                         <p>Avançar</p>
-                         <img src="/assets/next-icon.png">
-                    </button>
+                    <div class="buttons">
+                         <button class="next-button-2 back-button-2">
+                              <img src="/assets/back-icon.png">
+                              <p>Tela anterior</p>
+                         </button>
+                         <button type="submit" class="next-button-2">
+                              <p>Avançar</p>
+                              <img src="/assets/next-icon.png">
+                         </button>
+                    </div>
+               </div>
+
+               <!-- Quarta tela - Medicamentos -->
+
+               <div class="fields-windown3 windown fourth">
+                    <div class="column">
+
+                         <div class="add-medication">
+                              <div class="img">
+                                   <img src="/assets/add-icon.png">
+                              </div>
+                              <p>Adicionar um medicamento</p>
+                         </div>
+                         
+                         <div class="form-medication">
+                              <label>Nome do medicamento:</label>
+                               <input type="text" name="name" placeholder="Digite aqui o nome do medicamento">
+                         
+                              <label>Dosagem:</label>
+                              <input type="text" name="cpf" placeholder="Digite aqui a dosagem do medicamento do estudante">
+
+                              <div class="schadules column">
+                                   <div class="schadule">
+                                        <label>Horário:</label>
+                                        <input type="time" name="phone" placeholder="Digite aqui o numero do responsável">
+                                   </div>
+                                   <div class="schadule">
+                                        <label>Horário:</label>
+                                        <input type="time" name="phone" placeholder="Digite aqui o numero do responsável">
+                                   </div>
+                                   <div class="schadule">
+                                        <label>Horário:</label>
+                                        <input type="time" name="phone" placeholder="Digite aqui o numero do responsável">
+                                   </div>
+                              </div>
+                         </div>
+                         
+                         
+                    </div>
+
+                    <div class="buttons">
+                         <button class="next-button-2 back-button-2">
+                              <img src="/assets/back-icon.png">
+                              <p>Tela anterior</p>
+                         </button>
+                         <button type="submit" class="next-button-2">
+                              <p>Avançar</p>
+                              <img src="/assets/next-icon.png">
+                         </button>
+                    </div>
                </div>
 
           </form>

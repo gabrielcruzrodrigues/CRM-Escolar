@@ -37,16 +37,16 @@ namespace CRM_Escolar.Controllers
             return Ok(response);
         }
 
-        [HttpGet("{id:int}", Name ="GetStudent")]
-        public async Task<ActionResult<Student>> GetByIdAsync(int id)
+        [HttpGet("{userId:int}", Name ="GetStudent")]
+        public async Task<ActionResult<Student>> GetByIdAsync(int userId)
         {
-            return await _repository.GetByIdAsync(id);
+            return await _repository.GetByIdAsync(userId);
         }
 
-        [HttpDelete("{id:int}")]
-        public async Task<IActionResult> Delete(int id)
+        [HttpDelete("{userId:int}")]
+        public async Task<IActionResult> Delete(int userId)
         {
-            _repository.Delete(id);
+            _repository.Delete(userId);
             return NoContent();
         }
     }
