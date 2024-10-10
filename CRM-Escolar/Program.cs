@@ -1,6 +1,7 @@
 using CRM_Escolar.Data;
 using CRM_Escolar.Extensions;
 using CRM_Escolar.Repository;
+using CRM_Escolar.Repository.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
 
@@ -18,6 +19,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IStudentRepository, StudentRepository>();
 builder.Services.AddScoped<ISchoolRepository, SchoolRepository>();
+builder.Services.AddScoped<IResponsibleRepository, ResponsibleRepository>();
 
 string postgreSqlConnection = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<MyAppContext>(options =>

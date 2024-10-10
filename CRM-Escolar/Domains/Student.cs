@@ -73,6 +73,7 @@ namespace CRM_Escolar.Domains
         public ICollection<Illness>? Illnesses { get; set; }
         public ICollection<Responsible> Responsibles { get; set; }
 
+
         //propriedades de navegação
         public School School { get; set; }
 

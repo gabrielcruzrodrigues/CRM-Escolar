@@ -37,6 +37,8 @@ namespace CRM_Escolar.Domains
 
         public DateTime LastUpdatedAt { get; set; }
 
+
+        //navigation propertie
         public ICollection<Student> Students { get; set; }
     }
 }

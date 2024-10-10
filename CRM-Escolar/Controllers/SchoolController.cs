@@ -18,7 +18,7 @@ namespace CRM_Escolar.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<School>> create(CreateSchoolViewModel request)
+        public async Task<ActionResult<School>> Create(CreateSchoolViewModel request)
         {
             if (request is null)
             {
@@ -26,7 +26,7 @@ namespace CRM_Escolar.Controllers
             }
 
             var response = await _schoolRepository.Create(request);
-            return Created("/school/{schoolId}", response);
+            return StatusCode(201, response);
         }
 
         [HttpGet]
