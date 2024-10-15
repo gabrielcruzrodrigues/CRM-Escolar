@@ -37,6 +37,9 @@ public class CreateStudentViewModel
     [Required(ErrorMessage = "O dia do pagamento é obrigatório")]
     public required string PaymentDay { get; set; }
 
+    [Required(ErrorMessage = "O responsável é obrigatório")]
+    public required int ResponsibleId { get; set; }
+
     public Student CreateStudent()
     {
         if (string.IsNullOrEmpty(PaymentDay) || string.IsNullOrEmpty(DateOfBirth))
@@ -68,7 +71,8 @@ public class CreateStudentViewModel
             RegisterValue = RegisterValue,
             RegisterDate = new DateTime(registerDate.Year, registerDate.Month, registerDate.Day),
             PaymentDay = PaymentDay,
-            SchoolId = SchoolId
+            SchoolId = SchoolId,
+            ResponsibleId = ResponsibleId
         };
     }
 }

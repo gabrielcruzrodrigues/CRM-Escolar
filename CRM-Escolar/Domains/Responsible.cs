@@ -39,6 +39,7 @@ namespace CRM_Escolar.Domains
 
 
         //navigation propertie
+        [JsonIgnore]
         public ICollection<Student> Students { get; set; }
     }
 }

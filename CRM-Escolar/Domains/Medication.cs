@@ -14,10 +14,10 @@ namespace CRM_Escolar.Domains
         public string? Name { get; set; }
 
         [Required]
-        public IEnumerable<TimeOnly>? Times { get; set; }
+        public ICollection<TimeOnly>? Times { get; set; }
 
         [Required]
-        public IEnumerable<string>? Dosage { get; set; }
+        public ICollection<string>? Dosage { get; set; }
 
         [JsonIgnore]
         public Student? Student { get; set; }

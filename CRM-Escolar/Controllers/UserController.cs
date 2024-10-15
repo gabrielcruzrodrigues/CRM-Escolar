@@ -1,5 +1,6 @@
 ﻿using CRM_Escolar.Domains;
 using CRM_Escolar.Repository;
+using CRM_Escolar.Repository.Interfaces;
 using CRM_Escolar.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,10 +11,12 @@ namespace CRM_Escolar.Controllers
     public class StudentController : ControllerBase
     {
         public readonly IStudentRepository _repository;
+        public readonly IResponsibleRepository _responsibleRepository;
 
-        public StudentController(IStudentRepository repository)
+        public StudentController(IStudentRepository repository, IResponsibleRepository responsibleRepository)
         {
             _repository = repository;
+            _responsibleRepository = responsibleRepository;
         }
 
         [HttpPost]
@@ -24,10 +27,19 @@ namespace CRM_Escolar.Controllers
                 return BadRequest("O body para criar o estudante não pode ser nulo!");
             }
 
+
+
+            var responsibleVerify = await _responsibleRepository.GetById(studentViewModel.ResponsibleId);
+
+            if (responsibleVerify is null)
+            {
+                return NotFound($"The responsible with id: {studentViewModel.ResponsibleId} not found!");
+            }
+
             Student student = studentViewModel.CreateStudent();
             var userCreated = await _repository.CreateAsync(student);
 
-            return new CreatedAtRouteResult("GetStudent", new { id = userCreated.Id }, userCreated);
+            return StatusCode(201, new { response = userCreated });
         }
 
         [HttpGet]

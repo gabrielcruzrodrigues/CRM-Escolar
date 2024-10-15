@@ -21,5 +21,6 @@ public class School
     public DateTime LastUpdatedAt { get; set; }
 
     //propriedade de navegação
+    [JsonIgnore]
     public ICollection<Student>? Student { get; set; }
 }
