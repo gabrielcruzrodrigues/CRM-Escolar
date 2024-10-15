@@ -1,4 +1,5 @@
 ﻿using CRM_Escolar.Domains;
+using CRM_Escolar.ViewModels;
 
 namespace CRM_Escolar.Repository.Interfaces
 {
@@ -6,6 +7,6 @@ namespace CRM_Escolar.Repository.Interfaces
     {
         Task<IEnumerable<Medication>> GetAll();
         Task<Medication> GetById(int medicationId);
-        Task<Medication> Create();
+        Task<Medication> Create(CreateMedicationViewModel medicationViewModel);
     }
 }

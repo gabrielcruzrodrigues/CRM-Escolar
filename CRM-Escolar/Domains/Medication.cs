@@ -19,8 +19,12 @@ namespace CRM_Escolar.Domains
         [Required]
         public ICollection<string>? Dosage { get; set; }
 
+        [Required]
+        public int StudentId { get; set; }
+
+
         [JsonIgnore]
-        public Student? Student { get; set; }
+        public Student Student { get; set; }
 
     }
 }
