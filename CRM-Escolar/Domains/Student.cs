@@ -40,6 +40,9 @@ namespace CRM_Escolar.Domains
         public int ResponsibleId { get; set; }
 
         [Required]
+        public int IllnessId { get; set; }
+
+        [Required]
         public SerieEnum Serie { get; set; }
 
         [Required]

@@ -42,6 +42,7 @@ namespace CRM_Escolar.Repository
                 .Include(s => s.School)
                 .Include(s => s.Responsible)
                 .Include(s => s.Medications)
+                .Include(s => s.Illnesses)
                 .AsNoTracking()
                 .ToListAsync();
         }

@@ -1,6 +1,5 @@
 ﻿using CRM_Escolar.Domains;
 using System.ComponentModel.DataAnnotations;
-using System.Text.Json.Serialization;
 
 namespace CRM_Escolar.ViewModels
 {

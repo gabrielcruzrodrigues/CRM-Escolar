@@ -20,7 +20,16 @@ namespace CRM_Escolar.Domains
 
         public DateTime LastUpdatedAt { get; set; }
 
+        [Required]
+        public int StudentId { get; set; }
+
         [JsonIgnore]
-        public Student? Student { get; set; }
+        public Student Student { get; set; }
+
+        public Illness()
+        {
+            CreatedAt = DateTime.UtcNow;
+            LastUpdatedAt = DateTime.UtcNow;
+        }
     }
 }
