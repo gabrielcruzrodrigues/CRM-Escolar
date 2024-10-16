@@ -75,13 +75,12 @@ namespace CRM_Escolar.Domains
         }
 
         public List<string>? Allergies { get; set; }
-        public ICollection<Medication>? Medications { get; set; }
-        public ICollection<Illness>? Illnesses { get; set; }
 
 
-        //navigation properties
         public Responsible Responsible { get; set; }
         public School School { get; set; }
+        public ICollection<Illness> Illnesses { get; set; }
+        public ICollection<Medication>? Medications { get; set; }
 
         public Student()
         {
