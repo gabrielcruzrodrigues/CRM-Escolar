@@ -41,6 +41,7 @@ namespace CRM_Escolar.Repository
             return await _context.Students
                 .Include(s => s.School)
                 .Include(s => s.Responsible)
+                .Include(s => s.Medications)
                 .AsNoTracking()
                 .ToListAsync();
         }
