@@ -9,15 +9,14 @@
                <h1>{{ title }}</h1>
           </div>
 
-          <form action="">
-
-               <!-- ------------ Formulário - Estudante ------------ -->
+          <!-- ------------ Formulário - Estudante ------------ -->
+          <form [formGroup]="studentForm">
 
                <div class="windown student-form">
                     <div class="image-profile">
                          <input type="file">
                     </div>
-
+                    
                     <div class="fields-student-form">
                          <div class="column">
                               <label>Nome:</label>
@@ -34,25 +33,27 @@
                               <input type="text" name="serie" placeholder="Escolha a série do aluno">
                               <label>Dia de pagamento:</label>
                               <input type="number" name="payment-day"
-                                   placeholder="Digite aqui o dia de pagamento do aluno">
+                              placeholder="Digite aqui o dia de pagamento do aluno">
                               <label>Telefone de emergência:</label>
                               <input type="number" name="emergence-phone"
-                                   placeholder="Digite aqui o telefone de emergência do usuário">
+                              placeholder="Digite aqui o telefone de emergência do usuário">
                               <label>Alergias:</label>
                               <input name="allergies" placeholder="Digite aqui as alergias do usuário">
                          </div>
                     </div>
-
+                    
                     <button class="next-button-student-form">
                          <p>Avançar</p>
                          <img src="/assets/next-icon.png">
                     </button>
                </div>
+          </form>
 
-               <!-- ------------ Formulário - Responsável ------------ -->
+          <!-- ------------ Formulário - Responsável ------------ -->
+          <form [formGroup]="responsibleForm">
 
                <div class="windown responsible-form">
-
+     
                     <div class="fields-responsible-form ">
                          <div class="column">
                               <label>Nome:</label>
@@ -86,8 +87,10 @@
                          </div>
                     </div>
                </div>
+          </form>
 
-               <!-- ------------ Formulário - Escola ------------ -->
+          <!-- ------------ Formulário - Escola ------------ -->
+          <form [formGroup]="schoolForm">
 
                <div class="windown school-form">
                     <div class="fields-school-form">
@@ -115,11 +118,13 @@
                          </div>
                     </div>
                </div>
+          </form>
 
-               <!-- ------------ Formulário - Medicamentos ------------ -->
+          <!-- ------------ Formulário - Medicamentos ------------ -->
+          <form [formGroup]="medicationForm">
 
                <div class="windown medication-form">
-
+     
                     <div class="fields-medication-form">
                          <div class="column">
      
@@ -170,11 +175,13 @@
                          </div>
                     </div>
                </div>
-
-               <!-- ------------ Formulário - Doenças ------------ -->
+          </form>
+          
+          <!-- ------------ Formulário - Doenças ------------ -->
+          <form [formGroup]="illnessForm">
 
                <div class="windown illness-form">
-
+     
                     <div class="fields-illness-form">
                          <div class="column">
      
@@ -206,11 +213,13 @@
                          </div>
                     </div>
                </div>
+          </form>
 
-               <!-- ------------ Formulário - Allergias ------------ -->
-
+          <!-- ------------ Formulário - Allergias ------------ -->
+          <form [formGroup]="studentForm">
+          
                <div class="windown allergies-form">
-
+     
                     <div class="fields-allergies-form">
                          <div class="column">
      
@@ -239,7 +248,7 @@
                          </div>
                     </div>
                </div>
-
           </form>
+
      </section>
 </section>
