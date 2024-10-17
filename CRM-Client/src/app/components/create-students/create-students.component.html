@@ -10,9 +10,9 @@
           </div>
 
           <!-- ------------ Formulário - Estudante ------------ -->
-          <form [formGroup]="studentForm">
+          <form #student [formGroup]="studentForm">
 
-               <div class="windown student-form">
+               <div class="windown">
                     <div class="image-profile">
                          <input type="file">
                     </div>
@@ -20,29 +20,27 @@
                     <div class="fields-student-form">
                          <div class="column">
                               <label>Nome:</label>
-                              <input type="text" name="name" placeholder="Digite aqui o nome do aluno">
+                              <input formControlName="name" type="text" name="name" placeholder="Digite aqui o nome do aluno">
                               <label>CPF:</label>
-                              <input type="text" name="cpf" placeholder="Digite aqui o cpf do aluno">
+                              <input formControlName="cpf" type="text" name="cpf" placeholder="Digite aqui o cpf do aluno">
                               <label>Data de nascimento:</label>
-                              <input type="date" name="date-of-birth" placeholder="Digite aqui a data de aniversário">
+                              <input formControlName="dateOfBirth" type="date" name="date-of-birth" placeholder="Digite aqui a data de aniversário">
                               <label>Endereço:</label>
-                              <input type="type" name="address" placeholder="Digite aqui o endereço do aluno">
+                              <input formControlName="address" type="type" name="address" placeholder="Digite aqui o endereço do aluno">
                          </div>
                          <div class="column">
                               <label>Serie:</label>
-                              <input type="text" name="serie" placeholder="Escolha a série do aluno">
+                              <input formControlName="serie" type="text" name="serie" placeholder="Escolha a série do aluno">
                               <label>Dia de pagamento:</label>
-                              <input type="number" name="payment-day"
-                              placeholder="Digite aqui o dia de pagamento do aluno">
+                              <input formControlName="paymentDay" type="number" name="payment-day" placeholder="Digite aqui o dia de pagamento do aluno">
                               <label>Telefone de emergência:</label>
-                              <input type="number" name="emergence-phone"
-                              placeholder="Digite aqui o telefone de emergência do usuário">
+                              <input formControlName="emergencePhone" type="number" name="emergence-phone"placeholder="Digite aqui o telefone de emergência do usuário">
                               <label>Alergias:</label>
-                              <input name="allergies" placeholder="Digite aqui as alergias do usuário">
+                              <input formControlName="allergies" name="allergies" placeholder="Ex: Poeira, amendoin">
                          </div>
                     </div>
                     
-                    <button class="next-button-student-form">
+                    <button class="next-button-student-form" (click)="changeStep('next')">
                          <p>Avançar</p>
                          <img src="/assets/next-icon.png">
                     </button>
@@ -50,37 +48,34 @@
           </form>
 
           <!-- ------------ Formulário - Responsável ------------ -->
-          <form [formGroup]="responsibleForm">
+          <form #responsible [formGroup]="responsibleForm" class="disable">
 
-               <div class="windown responsible-form">
+               <div class="windown">
      
                     <div class="fields-responsible-form ">
                          <div class="column">
                               <label>Nome:</label>
-                              <input type="text" name="name" placeholder="Digite aqui o nome do responsável">
+                              <input formControlName="name" type="text" name="name" placeholder="Digite aqui o nome do responsável">
                               <label>Phone:</label>
-                              <input type="number" name="phone" placeholder="Digite aqui o numero do responsável">
+                              <input formControlName="phone" type="number" name="phone" placeholder="Digite aqui o numero do responsável">
                               <label>CPF:</label>
-                              <input type="text" name="cpf" placeholder="Digite aqui o cpf do responsável">
-                              <label>Data de nascimento:</label>
-                              <input type="date" name="date-of-birth"
-                                   placeholder="Digite aqui a data de aniversário do responsável">
+                              <input formControlName="cpf" type="text" name="cpf" placeholder="Digite aqui o cpf do responsável">
                               <label>Endereço:</label>
-                              <input type="type" name="address" placeholder="Digite aqui o endereço do responsável">
+                              <input formControlName="address" type="type" name="address" placeholder="Digite aqui o endereço do responsável">
                               <label>Email:</label>
-                              <input type="email" name="email" placeholder="Digite aqui o email do responsável">
+                              <input formControlName="email" type="email" name="email" placeholder="Digite aqui o email do responsável">
                               <label>Selecione o tipo do responsável</label>
-                              <select>
+                              <select formControlName="type">
                                    <option value="" disabled selected>Selecione um tipo</option>
                               </select>
                          </div>
      
                          <div class="buttons">
-                              <button class="next-button-2 back-button-2">
+                              <button class="next-button-2 back-button-2" (click)="changeStep('back')">
                                    <img src="/assets/back-icon.png">
                                    <p>Tela anterior</p>
                               </button>
-                              <button type="submit" class="next-button-2">
+                              <button type="submit" class="next-button-2" (click)="changeStep('next')">
                                    <p>Avançar</p>
                                    <img src="/assets/next-icon.png">
                               </button>
@@ -90,28 +85,28 @@
           </form>
 
           <!-- ------------ Formulário - Escola ------------ -->
-          <form [formGroup]="schoolForm">
+          <form #school [formGroup]="schoolForm" class="disable">
 
-               <div class="windown school-form">
+               <div class="windown">
                     <div class="fields-school-form">
                          <div class="column">
                               <select>
                                    <option value="" disabled selected>Verifique se a escola já esta cadastrada</option>
                               </select>
                               <label>Nome da escola:</label>
-                              <input type="text" name="name" placeholder="Digite aqui o nome do responsável">
+                              <input formControlName="name" type="text" name="name" placeholder="Digite aqui o nome do responsável">
                               <label>Telefone:</label>
-                              <input type="number" name="phone" placeholder="Digite aqui o numero do responsável">
+                              <input formControlName="phone" type="number" name="phone" placeholder="Digite aqui o numero do responsável">
                               <label>City:</label>
-                              <input type="text" name="cpf" placeholder="Digite aqui o cpf do responsável">
+                              <input formControlName="address" type="text" name="cpf" placeholder="Digite aqui o cpf do responsável">
                          </div>
      
                          <div class="buttons">
-                              <button class="next-button-2 back-button-2">
+                              <button class="next-button-2 back-button-2" (click)="changeStep('back')">
                                    <img src="/assets/back-icon.png">
                                    <p>Tela anterior</p>
                               </button>
-                              <button type="submit" class="next-button-2">
+                              <button type="submit" class="next-button-2" (click)="changeStep('next')">
                                    <p>Avançar</p>
                                    <img src="/assets/next-icon.png">
                               </button>
@@ -121,9 +116,9 @@
           </form>
 
           <!-- ------------ Formulário - Medicamentos ------------ -->
-          <form [formGroup]="medicationForm">
+          <form #medication [formGroup]="medicationForm" class="disable">
 
-               <div class="windown medication-form">
+               <div class="windown">
      
                     <div class="fields-medication-form">
                          <div class="column">
@@ -137,38 +132,35 @@
      
                               <div class="form-medication">
                                    <label>Nome do medicamento:</label>
-                                   <input type="text" name="name" placeholder="Digite aqui o nome do medicamento">
+                                   <input formControlName="name" type="text" name="name" placeholder="Digite aqui o nome do medicamento">
      
                                    <label>Dosagem:</label>
-                                   <input type="text" name="cpf"
+                                   <input formControlName="dosage" type="text" name="cpf"
                                         placeholder="Digite aqui a dosagem do medicamento do estudante">
      
                                    <div class="schadules column">
                                         <div class="schadule">
                                              <label>Horário:</label>
-                                             <input type="time" name="phone"
-                                                  placeholder="Digite aqui o numero do responsável">
+                                             <input type="time" name="time">
                                         </div>
                                         <div class="schadule">
                                              <label>Horário:</label>
-                                             <input type="time" name="phone"
-                                                  placeholder="Digite aqui o numero do responsável">
+                                             <input type="time" name="time">
                                         </div>
                                         <div class="schadule">
                                              <label>Horário:</label>
-                                             <input type="time" name="phone"
-                                                  placeholder="Digite aqui o numero do responsável">
+                                             <input type="time" name="time">
                                         </div>
                                    </div>
                               </div>
                          </div>
      
                          <div class="buttons">
-                              <button class="next-button-2 back-button-2">
+                              <button class="next-button-2 back-button-2" (click)="changeStep('back')">
                                    <img src="/assets/back-icon.png">
                                    <p>Tela anterior</p>
                               </button>
-                              <button type="submit" class="next-button-2">
+                              <button type="submit" class="next-button-2" (click)="changeStep('next')">
                                    <p>Avançar</p>
                                    <img src="/assets/next-icon.png">
                               </button>
@@ -178,9 +170,9 @@
           </form>
           
           <!-- ------------ Formulário - Doenças ------------ -->
-          <form [formGroup]="illnessForm">
+          <form #illness [formGroup]="illnessForm" class="disable">
 
-               <div class="windown illness-form">
+               <div class="windown">
      
                     <div class="fields-illness-form">
                          <div class="column">
@@ -194,55 +186,20 @@
      
                               <div class="form-medication">
                                    <label>Nome da enfermidade:</label>
-                                   <input type="text" name="name" placeholder="Digite aqui o nome da enfermidade">
+                                   <input formControlName="name" type="text" name="name" placeholder="Digite aqui o nome da enfermidade">
      
                                    <label>Observação:</label>
-                                   <input type="text" name="cpf" placeholder="Observações">
+                                   <input formControlName="observation" type="text" name="cpf" placeholder="Observações">
                               </div>
                          </div>
      
                          <div class="buttons">
-                              <button class="next-button-2 back-button-2">
+                              <button class="next-button-2 back-button-2" (click)="changeStep('back')">
                                    <img src="/assets/back-icon.png">
                                    <p>Tela anterior</p>
                               </button>
                               <button type="submit" class="next-button-2">
-                                   <p>Avançar</p>
-                                   <img src="/assets/next-icon.png">
-                              </button>
-                         </div>
-                    </div>
-               </div>
-          </form>
-
-          <!-- ------------ Formulário - Allergias ------------ -->
-          <form [formGroup]="studentForm">
-          
-               <div class="windown allergies-form">
-     
-                    <div class="fields-allergies-form">
-                         <div class="column">
-     
-                              <div class="add-medication">
-                                   <div class="img">
-                                        <img src="/assets/add-icon.png">
-                                   </div>
-                                   <p>Adicionar Alergia</p>
-                              </div>
-     
-                              <div class="form-medication">
-                                   <label>Alergias:</label>
-                                   <input type="text" name="name" placeholder="ex: Poeira, amendoin">
-                              </div>
-                         </div>
-     
-                         <div class="buttons">
-                              <button class="next-button-2 back-button-2">
-                                   <img src="/assets/back-icon.png">
-                                   <p>Tela anterior</p>
-                              </button>
-                              <button type="submit" class="next-button-2">
-                                   <p>Avançar</p>
+                                   <p>Finalizar</p>
                                    <img src="/assets/next-icon.png">
                               </button>
                          </div>

@@ -3,6 +3,10 @@
 
 // ------------ Estilos globais ------------
 
+.disable {
+     display: none;
+}
+
 .form-section {
      width: 100%;
      background-color: white;
@@ -45,10 +49,6 @@
 
 
 // ------------ Formulário - Estudante ------------
-
-.student-form {
-     // display: none;
-}
 
 .image-profile {
      height: 250px;
@@ -106,10 +106,6 @@
 }
 
 // ------------ Formulário - Responsável ------------
-
-.responsible-form {
-     display: none;
-}
 
 .fields-responsible-form { 
      display: block;
@@ -174,10 +170,6 @@ select {
 
 // ------------ Formulário - Escola ------------
 
-.school-form {
-     display: none;
-}
-
 .fields-school-form { 
      display: block;
      width: 80%;
@@ -200,10 +192,6 @@ select {
 }
 
 // ------------ Formulário - Medicamentos ------------
-
-.medication-form {
-     display: none;
-}
 
 .fields-medication-form {
      display: block;
@@ -265,10 +253,6 @@ select {
 
 // ------------ Formulário - Doenças ------------
 
-.illness-form {
-     display: none;
-}
-
 .fields-illness-form {
      display: block;
      width: 80%;
@@ -291,10 +275,6 @@ select {
 }
 
 // ------------ Formulário - Allergias ------------
-.allergies-form 
-{
-     display: none;
-}
 
 .fields-allergies-form {
      display: block;
