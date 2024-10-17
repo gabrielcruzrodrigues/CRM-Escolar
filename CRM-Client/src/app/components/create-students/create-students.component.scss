@@ -1,5 +1,8 @@
 @import '../../../scss/color-variables.scss';
 
+
+// ------------ Estilos globais ------------
+
 .form-section {
      width: 100%;
      background-color: white;
@@ -34,9 +37,16 @@
      margin-bottom: 20px;
 }
 
-// Primeira tela - Estudante
+.column {
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+}
 
-.first {
+
+// ------------ Formulário - Estudante ------------
+
+.student-form {
      display: none;
 }
 
@@ -56,7 +66,7 @@
      cursor: pointer;
 }
 
-.fields-windown1 {
+.fields-student-form {
     display: grid;
     gap: 3%;
     grid-template-columns: 1fr 1fr; 
@@ -64,7 +74,7 @@
     margin-top: 20px;
 }
 
-.fields-windown1 input, .fields-windown2 input, .fields-windown3 input {
+.fields-student-form input {
      padding: 10px;
      border: 1px solid #ccc;
      border-radius: 8px;
@@ -76,13 +86,7 @@
      margin-bottom: 3px;
 }
 
-.column {
-     display: flex;
-     justify-content: center;
-     flex-direction: column;
-}
-
-.next-button-1 {
+.next-button-student-form {
      display: flex;
      align-items: center;
      font-size: 20px;
@@ -97,26 +101,30 @@
      box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.1);
 }
 
-.next-button-1 p {
+.next-button-student-form p {
      margin-right: 2%;
 }
 
-// segunda tela - Responsavel
+// ------------ Formulário - Responsável ------------
 
-.second {
+.responsible-form {
      display: none;
 }
 
-.fields-windown2 { 
-     // display: block;
+.fields-responsible-form { 
+     display: block;
      width: 80%;
      margin-top: 30px;
 }
 
-.fields-windown2 input, .fields-windown3 input {
+.fields-responsible-form input {
      width: 60%;
      margin: 0 auto;
      margin-bottom: 2%;
+     padding: 10px;
+     border: 1px solid #ccc;
+     border-radius: 8px;
+     box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.1);
 }
 
 select {
@@ -128,15 +136,9 @@ select {
      box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.1);
 }
 
-.fields-windown2 label, .fields-windown3 label {
+.fields-responsible-form label, .fields-windown3 label {
      width: 60%;
      margin: 0 auto;
-}
-
-.fields-windown3 { 
-     display: block;
-     width: 80%;
-     margin-top: 30px;
 }
 
 .buttons {
@@ -170,16 +172,58 @@ select {
      color: black;
 }
 
-// Terceira tela - Escola
+// ------------ Formulário - Escola ------------
 
-.third {
+.school-form {
      display: none;
 }
 
-// Quarta tela - Medicamentos
+.fields-school-form { 
+     display: block;
+     width: 80%;
+     margin-top: 30px;
+}
 
-.fourth {
-     // display: none;
+.fields-school-form input {
+     width: 60%;
+     margin: 0 auto;
+     margin-bottom: 2%;
+     padding: 10px;
+     border: 1px solid #ccc;
+     border-radius: 8px;
+     box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.1);
+}
+
+.fields-school-form label {
+     width: 60%;
+     margin: 0 auto;
+}
+
+// ------------ Formulário - Medicamentos ------------
+
+.medication-form {
+     display: none;
+}
+
+.fields-medication-form {
+     display: block;
+     width: 80%;
+     margin-top: 30px;
+}
+
+.fields-medication-form input {
+     width: 60%;
+     margin: 0 auto;
+     margin-bottom: 2%;
+     padding: 10px;
+     border: 1px solid #ccc;
+     border-radius: 8px;
+     box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.1);
+}
+
+.fields-medication-form label {
+     width: 60%;
+     margin: 0 auto;
 }
 
 .add-medication {
@@ -197,7 +241,7 @@ select {
      margin-bottom: 10px;
 }
 
-.add-medication p{
+.add-medication p {
      font-size: 18px;
      text-align: center;
 }
@@ -217,4 +261,58 @@ select {
 .schadule {
      display: flex;
      flex-direction: column;
+}
+
+// ------------ Formulário - Doenças ------------
+
+.illness-form {
+     display: none;
+}
+
+.fields-illness-form {
+     display: block;
+     width: 80%;
+     margin-top: 30px;
+}
+
+.fields-illness-form input {
+     width: 60%;
+     margin: 0 auto;
+     margin-bottom: 2%;
+     padding: 10px;
+     border: 1px solid #ccc;
+     border-radius: 8px;
+     box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.1);
+}
+
+.fields-illness-form label {
+     width: 60%;
+     margin: 0 auto;
+}
+
+// ------------ Formulário - Allergias ------------
+.allergies-form 
+{
+     // display: none;
+}
+
+.fields-allergies-form {
+     display: block;
+     width: 80%;
+     margin-top: 30px;
+}
+
+.fields-allergies-form input {
+     width: 60%;
+     margin: 0 auto;
+     margin-bottom: 2%;
+     padding: 10px;
+     border: 1px solid #ccc;
+     border-radius: 8px;
+     box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.1);
+}
+
+.fields-allergies-form label {
+     width: 60%;
+     margin: 0 auto;
 }

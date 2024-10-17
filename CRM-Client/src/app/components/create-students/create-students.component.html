@@ -1,7 +1,8 @@
 <app-menu></app-menu>
 <section class="main-section">
      <app-infos-back [link]="link"></app-infos-back>
-     <!-- Layout da tela geral -->
+
+     <!-- ------------ Layout padrão da interface ------------ -->
      <section class="form-section">
           <div class="title">
                <img src="/assets/add-icon.png">
@@ -10,13 +11,14 @@
 
           <form action="">
 
-               <!-- Primeira tela - Estudante -->
-                <div class="windown first">
+               <!-- ------------ Formulário - Estudante ------------ -->
+
+               <div class="windown student-form">
                     <div class="image-profile">
                          <input type="file">
                     </div>
-     
-                    <div class="fields-windown1">
+
+                    <div class="fields-student-form">
                          <div class="column">
                               <label>Nome:</label>
                               <input type="text" name="name" placeholder="Digite aqui o nome do aluno">
@@ -31,130 +33,213 @@
                               <label>Serie:</label>
                               <input type="text" name="serie" placeholder="Escolha a série do aluno">
                               <label>Dia de pagamento:</label>
-                              <input type="number" name="payment-day" placeholder="Digite aqui o dia de pagamento do aluno">
+                              <input type="number" name="payment-day"
+                                   placeholder="Digite aqui o dia de pagamento do aluno">
                               <label>Telefone de emergência:</label>
-                              <input type="number" name="emergence-phone" placeholder="Digite aqui o telefone de emergência do usuário">
+                              <input type="number" name="emergence-phone"
+                                   placeholder="Digite aqui o telefone de emergência do usuário">
                               <label>Alergias:</label>
                               <input name="allergies" placeholder="Digite aqui as alergias do usuário">
                          </div>
                     </div>
-     
-                    <button class="next-button-1">
+
+                    <button class="next-button-student-form">
                          <p>Avançar</p>
                          <img src="/assets/next-icon.png">
                     </button>
                </div>
-               
-               <!-- Segunda tela - Responsável -->
-               <div class="second fields-windown2 windown">
-                    <div class="column">
-                         <label>Nome:</label>
-                         <input type="text" name="name" placeholder="Digite aqui o nome do responsável">
-                         <label>Phone:</label>
-                         <input type="number" name="phone" placeholder="Digite aqui o numero do responsável">
-                         <label>CPF:</label>
-                         <input type="text" name="cpf" placeholder="Digite aqui o cpf do responsável">
-                         <label>Data de nascimento:</label>
-                         <input type="date" name="date-of-birth" placeholder="Digite aqui a data de aniversário do responsável">
-                         <label>Endereço:</label>
-                         <input type="type" name="address" placeholder="Digite aqui o endereço do responsável">
-                         <label>Email:</label>
-                         <input type="email" name="email" placeholder="Digite aqui o email do responsável">
-                         <label>Selecione o tipo do responsável</label>
-                         <select>
-                              <option value="" disabled selected>Selecione um tipo</option>
-                         </select>
-                    </div>
 
-                    <div class="buttons">
-                         <button class="next-button-2 back-button-2">
-                              <img src="/assets/back-icon.png">
-                              <p>Tela anterior</p>
-                         </button>
-                         <button type="submit" class="next-button-2">
-                              <p>Avançar</p>
-                              <img src="/assets/next-icon.png">
-                         </button>
+               <!-- ------------ Formulário - Responsável ------------ -->
+
+               <div class="windown responsible-form">
+
+                    <div class="fields-responsible-form ">
+                         <div class="column">
+                              <label>Nome:</label>
+                              <input type="text" name="name" placeholder="Digite aqui o nome do responsável">
+                              <label>Phone:</label>
+                              <input type="number" name="phone" placeholder="Digite aqui o numero do responsável">
+                              <label>CPF:</label>
+                              <input type="text" name="cpf" placeholder="Digite aqui o cpf do responsável">
+                              <label>Data de nascimento:</label>
+                              <input type="date" name="date-of-birth"
+                                   placeholder="Digite aqui a data de aniversário do responsável">
+                              <label>Endereço:</label>
+                              <input type="type" name="address" placeholder="Digite aqui o endereço do responsável">
+                              <label>Email:</label>
+                              <input type="email" name="email" placeholder="Digite aqui o email do responsável">
+                              <label>Selecione o tipo do responsável</label>
+                              <select>
+                                   <option value="" disabled selected>Selecione um tipo</option>
+                              </select>
+                         </div>
+     
+                         <div class="buttons">
+                              <button class="next-button-2 back-button-2">
+                                   <img src="/assets/back-icon.png">
+                                   <p>Tela anterior</p>
+                              </button>
+                              <button type="submit" class="next-button-2">
+                                   <p>Avançar</p>
+                                   <img src="/assets/next-icon.png">
+                              </button>
+                         </div>
                     </div>
                </div>
 
-               <!-- Terceira tela - Escola -->
-               <div class="fields-windown3 windown third">
-                    <div class="column">
-                         <select>
-                              <option value="" disabled selected>Verifique se a escola já esta cadastrada</option>
-                         </select>
-                         <label>Nome da escola:</label>
-                         <input type="text" name="name" placeholder="Digite aqui o nome do responsável">
-                         <label>Telefone:</label>
-                         <input type="number" name="phone" placeholder="Digite aqui o numero do responsável">
-                         <label>City:</label>
-                         <input type="text" name="cpf" placeholder="Digite aqui o cpf do responsável">
-                    </div>
+               <!-- ------------ Formulário - Escola ------------ -->
 
-                    <div class="buttons">
-                         <button class="next-button-2 back-button-2">
-                              <img src="/assets/back-icon.png">
-                              <p>Tela anterior</p>
-                         </button>
-                         <button type="submit" class="next-button-2">
-                              <p>Avançar</p>
-                              <img src="/assets/next-icon.png">
-                         </button>
+               <div class="windown school-form">
+                    <div class="fields-school-form">
+                         <div class="column">
+                              <select>
+                                   <option value="" disabled selected>Verifique se a escola já esta cadastrada</option>
+                              </select>
+                              <label>Nome da escola:</label>
+                              <input type="text" name="name" placeholder="Digite aqui o nome do responsável">
+                              <label>Telefone:</label>
+                              <input type="number" name="phone" placeholder="Digite aqui o numero do responsável">
+                              <label>City:</label>
+                              <input type="text" name="cpf" placeholder="Digite aqui o cpf do responsável">
+                         </div>
+     
+                         <div class="buttons">
+                              <button class="next-button-2 back-button-2">
+                                   <img src="/assets/back-icon.png">
+                                   <p>Tela anterior</p>
+                              </button>
+                              <button type="submit" class="next-button-2">
+                                   <p>Avançar</p>
+                                   <img src="/assets/next-icon.png">
+                              </button>
+                         </div>
                     </div>
                </div>
 
-               <!-- Quarta tela - Medicamentos -->
+               <!-- ------------ Formulário - Medicamentos ------------ -->
 
-               <div class="fields-windown3 windown fourth">
-                    <div class="column">
+               <div class="windown medication-form">
 
-                         <div class="add-medication">
-                              <div class="img">
-                                   <img src="/assets/add-icon.png">
+                    <div class="fields-medication-form">
+                         <div class="column">
+     
+                              <div class="add-medication">
+                                   <div class="img">
+                                        <img src="/assets/add-icon.png">
+                                   </div>
+                                   <p>Adicionar um medicamento</p>
                               </div>
-                              <p>Adicionar um medicamento</p>
-                         </div>
-                         
-                         <div class="form-medication">
-                              <label>Nome do medicamento:</label>
-                               <input type="text" name="name" placeholder="Digite aqui o nome do medicamento">
-                         
-                              <label>Dosagem:</label>
-                              <input type="text" name="cpf" placeholder="Digite aqui a dosagem do medicamento do estudante">
-
-                              <div class="schadules column">
-                                   <div class="schadule">
-                                        <label>Horário:</label>
-                                        <input type="time" name="phone" placeholder="Digite aqui o numero do responsável">
-                                   </div>
-                                   <div class="schadule">
-                                        <label>Horário:</label>
-                                        <input type="time" name="phone" placeholder="Digite aqui o numero do responsável">
-                                   </div>
-                                   <div class="schadule">
-                                        <label>Horário:</label>
-                                        <input type="time" name="phone" placeholder="Digite aqui o numero do responsável">
+     
+                              <div class="form-medication">
+                                   <label>Nome do medicamento:</label>
+                                   <input type="text" name="name" placeholder="Digite aqui o nome do medicamento">
+     
+                                   <label>Dosagem:</label>
+                                   <input type="text" name="cpf"
+                                        placeholder="Digite aqui a dosagem do medicamento do estudante">
+     
+                                   <div class="schadules column">
+                                        <div class="schadule">
+                                             <label>Horário:</label>
+                                             <input type="time" name="phone"
+                                                  placeholder="Digite aqui o numero do responsável">
+                                        </div>
+                                        <div class="schadule">
+                                             <label>Horário:</label>
+                                             <input type="time" name="phone"
+                                                  placeholder="Digite aqui o numero do responsável">
+                                        </div>
+                                        <div class="schadule">
+                                             <label>Horário:</label>
+                                             <input type="time" name="phone"
+                                                  placeholder="Digite aqui o numero do responsável">
+                                        </div>
                                    </div>
                               </div>
                          </div>
-                         
-                         
+     
+                         <div class="buttons">
+                              <button class="next-button-2 back-button-2">
+                                   <img src="/assets/back-icon.png">
+                                   <p>Tela anterior</p>
+                              </button>
+                              <button type="submit" class="next-button-2">
+                                   <p>Avançar</p>
+                                   <img src="/assets/next-icon.png">
+                              </button>
+                         </div>
                     </div>
+               </div>
 
-                    <div class="buttons">
-                         <button class="next-button-2 back-button-2">
-                              <img src="/assets/back-icon.png">
-                              <p>Tela anterior</p>
-                         </button>
-                         <button type="submit" class="next-button-2">
-                              <p>Avançar</p>
-                              <img src="/assets/next-icon.png">
-                         </button>
+               <!-- ------------ Formulário - Doenças ------------ -->
+
+               <div class="windown illness-form">
+
+                    <div class="fields-illness-form">
+                         <div class="column">
+     
+                              <div class="add-medication">
+                                   <div class="img">
+                                        <img src="/assets/add-icon.png">
+                                   </div>
+                                   <p>Adicionar uma enfermidade</p>
+                              </div>
+     
+                              <div class="form-medication">
+                                   <label>Nome da enfermidade:</label>
+                                   <input type="text" name="name" placeholder="Digite aqui o nome da enfermidade">
+     
+                                   <label>Observação:</label>
+                                   <input type="text" name="cpf" placeholder="Observações">
+                              </div>
+                         </div>
+     
+                         <div class="buttons">
+                              <button class="next-button-2 back-button-2">
+                                   <img src="/assets/back-icon.png">
+                                   <p>Tela anterior</p>
+                              </button>
+                              <button type="submit" class="next-button-2">
+                                   <p>Avançar</p>
+                                   <img src="/assets/next-icon.png">
+                              </button>
+                         </div>
+                    </div>
+               </div>
+
+               <!-- ------------ Formulário - Allergias ------------ -->
+
+               <div class="windown allergies-form">
+
+                    <div class="fields-allergies-form">
+                         <div class="column">
+     
+                              <div class="add-medication">
+                                   <div class="img">
+                                        <img src="/assets/add-icon.png">
+                                   </div>
+                                   <p>Adicionar Alergia</p>
+                              </div>
+     
+                              <div class="form-medication">
+                                   <label>Alergias:</label>
+                                   <input type="text" name="name" placeholder="ex: Poeira, amendoin">
+                              </div>
+                         </div>
+     
+                         <div class="buttons">
+                              <button class="next-button-2 back-button-2">
+                                   <img src="/assets/back-icon.png">
+                                   <p>Tela anterior</p>
+                              </button>
+                              <button type="submit" class="next-button-2">
+                                   <p>Avançar</p>
+                                   <img src="/assets/next-icon.png">
+                              </button>
+                         </div>
                     </div>
                </div>
 
           </form>
      </section>
-
 </section>
