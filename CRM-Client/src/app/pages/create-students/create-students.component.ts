@@ -2,7 +2,8 @@ import { Component, ElementRef, viewChild, ViewChild } from '@angular/core';
 import { MenuComponent } from '../../components/layout/menu/menu.component';
 import { InfosBackComponent } from '../../components/layout/infos-back/infos-back.component';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Toast, ToastrComponentlessModule, ToastrModule, ToastrService } from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr';
+import { ConverterFieldName } from './../../utils/ConverterFieldNameToPortuguese';
 
 @Component({
   selector: 'app-create-students',
@@ -40,11 +41,10 @@ export class CreateStudentsComponent {
   ) {
     this.studentForm = this.fb.group({
       name: ['', Validators.required],
-      cpf: [''],
+      cpf: ['', Validators.required],
       dateOfBirth: ['', Validators.required],
       address: ['', Validators.required],
       serie: ['', Validators.required],
-      registerValue: ['', Validators.required],
       paymentDay: ['', Validators.required],
       emergencePhone: ['', Validators.required],
       schoolId: [''],
@@ -66,7 +66,6 @@ export class CreateStudentsComponent {
       phone: [''],
       address: ['']
     });
-
 
     this.medicationForm = this.fb.group({
       name: ['', Validators.required],
@@ -104,7 +103,9 @@ export class CreateStudentsComponent {
 
   changeStep(option: string): void {
     if (option === 'next' && this.step <= 4) {
-      this.step++;
+      if (this.verifyFields()) {
+        this.step++;
+      }
     }
 
     if (option === 'back' && this.step >= 2) {
@@ -112,6 +113,34 @@ export class CreateStudentsComponent {
     }
 
     this.updateTemplate();
+  }
+
+  verifyFields(): boolean {
+    const studentFields = this.studentForm.controls;
+    const responsibleFields = this.responsibleForm.controls;
+    const schoolFields = this.schoolForm.controls;
+    const medicationFields = this.medicationForm.controls;
+    const illnessFields = this.illnessForm.controls;
+
+    const allFields = [studentFields, responsibleFields, schoolFields, medicationFields, illnessFields];
+
+    for (const [index, group] of allFields.entries()) {
+      if (index < this.step) {
+        console.log(group);
+        for (const controlName in group) {
+          const control = group[controlName];
+          const errors = control.errors;
+          this.toastr.success(controlName);
+    
+          if (errors?.['required']) {
+            this.toastr.error(`O campo ${ConverterFieldName.verify(controlName)} é obrigatório!`);
+            return false;
+          }
+        }
+      }
+    }
+
+    return true;
   }
 
   updateTemplate(): void {

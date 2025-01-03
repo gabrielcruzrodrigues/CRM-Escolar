@@ -27,8 +27,6 @@ namespace CRM_Escolar.Controllers
                 return BadRequest("O body para criar o estudante não pode ser nulo!");
             }
 
-
-
             var responsibleVerify = await _responsibleRepository.GetById(studentViewModel.ResponsibleId);
 
             if (responsibleVerify is null)
