@@ -51,9 +51,22 @@
           <form #responsible [formGroup]="responsibleForm" class="disable">
 
                <div class="windown">
-     
                     <div class="fields-responsible-form ">
                          <div class="column">
+                              <label>Selecione ou adicione um novo responsável:</label>
+                              <select>
+                                   <option value="" disabled selected>Selecione um responsável</option>
+                              </select>
+                         </div>
+     
+                         <div class="add-medication" (click)="showElement('form_responsible')">
+                              <div class="img">
+                                   <img src="/assets/add-icon.png">
+                              </div>
+                              <p>Adicionar uma novo responsável</p>
+                         </div>
+
+                         <div class="disable" #form_responsible>
                               <label>Nome:</label>
                               <input formControlName="name" type="text" name="name" placeholder="Digite aqui o nome do responsável">
                               <label>Phone:</label>
@@ -90,14 +103,25 @@
                <div class="windown">
                     <div class="fields-school-form">
                          <div class="column">
+                              <label>Selecione ou crie uma nova escola:</label>
                               <select>
-                                   <option value="" disabled selected>Verifique se a escola já esta cadastrada</option>
+                                   <option value="" disabled selected>Selecione uma escola</option>
                               </select>
+                         </div>
+
+                         <div class="add-medication" (click)="showElement('form_school')">
+                              <div class="img">
+                                   <img src="/assets/add-icon.png">
+                              </div>
+                              <p>Adicionar uma escola</p>
+                         </div>
+
+                         <div class="disable" #form_school>
                               <label>Nome da escola:</label>
                               <input formControlName="name" type="text" name="name" placeholder="Digite aqui o nome do responsável">
                               <label>Telefone:</label>
                               <input formControlName="phone" type="number" name="phone" placeholder="Digite aqui o numero do responsável">
-                              <label>City:</label>
+                              <label>Cidade:</label>
                               <input formControlName="address" type="text" name="cpf" placeholder="Digite aqui o cpf do responsável">
                          </div>
      
@@ -123,14 +147,14 @@
                     <div class="fields-medication-form">
                          <div class="column">
      
-                              <div class="add-medication">
+                              <div class="add-medication" (click)="showElement('form-medication')">
                                    <div class="img">
                                         <img src="/assets/add-icon.png">
                                    </div>
                                    <p>Adicionar um medicamento</p>
                               </div>
      
-                              <div class="form-medication">
+                              <div class="form-medication disable" #form_medication>
                                    <label>Nome do medicamento:</label>
                                    <input formControlName="name" type="text" name="name" placeholder="Digite aqui o nome do medicamento">
      
@@ -177,14 +201,14 @@
                     <div class="fields-illness-form">
                          <div class="column">
      
-                              <div class="add-medication">
+                              <div class="add-medication" (click)="showElement('illness_form')">
                                    <div class="img">
                                         <img src="/assets/add-icon.png">
                                    </div>
                                    <p>Adicionar uma enfermidade</p>
                               </div>
      
-                              <div class="form-medication">
+                              <div class="form-medication disable" #illness_form>
                                    <label>Nome da enfermidade:</label>
                                    <input formControlName="name" type="text" name="name" placeholder="Digite aqui o nome da enfermidade">
      

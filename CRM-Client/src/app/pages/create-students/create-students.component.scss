@@ -7,6 +7,10 @@
      display: none;
 }
 
+.flex-active {
+     display: flex;
+}
+
 .form-section {
      width: 100%;
      background-color: white;
@@ -235,7 +239,6 @@ select {
 }
 
 .form-medication {
-     display: flex; //flex
      flex-direction: column;
 }
 
