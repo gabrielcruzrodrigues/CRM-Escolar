@@ -1,6 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { MenuComponent } from '../layout/menu/menu.component';
-import { InfosBackComponent } from '../layout/infos-back/infos-back.component';
+import { MenuComponent } from '../../components/layout/menu/menu.component';
+import { InfosBackComponent } from '../../components/layout/infos-back/infos-back.component';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({

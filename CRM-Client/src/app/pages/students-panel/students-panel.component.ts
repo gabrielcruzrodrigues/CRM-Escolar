@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { MenuComponent } from '../layout/menu/menu.component';
-import { InfosComponent } from '../layout/infos/infos.component';
+import { MenuComponent } from '../../components/layout/menu/menu.component';
+import { InfosComponent } from '../../components/layout/infos/infos.component';
 import { Router } from '@angular/router';
 
 @Component({
