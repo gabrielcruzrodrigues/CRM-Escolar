@@ -2,11 +2,13 @@ import { Component, ElementRef, viewChild, ViewChild } from '@angular/core';
 import { MenuComponent } from '../../components/layout/menu/menu.component';
 import { InfosBackComponent } from '../../components/layout/infos-back/infos-back.component';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Toast, ToastrComponentlessModule, ToastrModule, ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-create-students',
   standalone: true,
   imports: [MenuComponent, InfosBackComponent, ReactiveFormsModule],
+  providers: [ToastrService],
   templateUrl: './create-students.component.html',
   styleUrl: './create-students.component.scss'
 })
@@ -33,7 +35,8 @@ export class CreateStudentsComponent {
   @ViewChild('form_responsible') form_responsible!: ElementRef;
 
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private toastr: ToastrService
   ) {
     this.studentForm = this.fb.group({
       name: ['', Validators.required],
